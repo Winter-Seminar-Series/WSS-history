@@ -1,7 +1,8 @@
 import { removeDuplicateID } from '../../collections';
 import { convertTimeToDate } from '../../date';
 import { convertMarkdownToHTML } from '../../markdown';
-import { LabTalk } from '../../types';
+// @ts-ignore
+import { LabTalk } from '../../types.ts';
 import { fetchJson } from '../fetch';
 
 type LabTalkResponse = {
@@ -25,7 +26,7 @@ type LabTalkResponse = {
 }[];
 
 export async function fetchLabTalks() {
-  const url = `${process.env.API_ORIGIN}/api/lab-talk/${process.env.WSS_ORDER}/`;
+  const url = `${process.env.API_ORIGIN}/api/lab-talk/1/`;
   const response = await fetchJson<LabTalkResponse>(url);
 
   const labTalks: LabTalk[] = await Promise.all(

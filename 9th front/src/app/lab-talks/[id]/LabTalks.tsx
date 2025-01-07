@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getTimeSpanInMinutes } from '../../../lib/date';
-import { LabTalk, Seminar } from '../../../lib/types';
+// @ts-ignore
+import { LabTalk } from '../../../lib/types.ts';
 import calender from '../assets/Calendar.svg';
 import clock from '../assets/Clock.svg';
 
@@ -30,10 +31,12 @@ export default function LabTalk({ labTalk }: { labTalk: LabTalk }) {
         className="absolute left-0 right-0 top-0 -z-10 h-[400px] w-full bg-cover bg-center bg-no-repeat"
       ></div>
       <main>
-        <div className="my-13 px-auto py-auto mx-auto max-w-[1200px] rounded-2xl bg-white shadow-[0px_30px_60px_0px_rgba(189,192,199,0.10)]">
+        <div
+          className="my-13 px-auto py-auto mx-auto max-w-[1200px] rounded-2xl bg-white shadow-[0px_30px_60px_0px_rgba(189,192,199,0.10)]">
           <div className="flex flex-col items-start justify-center gap-8 px-20 py-[60px]">
             <div className="flex flex-col items-start justify-center  gap-2.5 self-stretch">
-              <div className="flex items-center space-x-4 text-lg font-medium uppercase not-italic leading-[normal] tracking-[0.72px] text-[#8A8998]">
+              <div
+                className="flex items-center space-x-4 text-lg font-medium uppercase not-italic leading-[normal] tracking-[0.72px] text-[#8A8998]">
                 <div className="flex items-center space-x-2 uppercase">
                   <Image src={calender} alt="" width={20} height={20} />
                   <span>
@@ -52,7 +55,8 @@ export default function LabTalk({ labTalk }: { labTalk: LabTalk }) {
                   </span>
                 </div>
               </div>
-              <div className="self-stretch text-[40px] font-semibold not-italic leading-[48px] tracking-[-0.4px] text-black">
+              <div
+                className="self-stretch text-[40px] font-semibold not-italic leading-[48px] tracking-[-0.4px] text-black">
                 {labTalk.name}
               </div>
             </div>
@@ -85,7 +89,8 @@ export default function LabTalk({ labTalk }: { labTalk: LabTalk }) {
                     className="h-[104px] w-[104px]"
                   ></img>
                   <div className="flex flex-col items-start gap-2 self-stretch">
-                    <label className="self-stretch text-2xl font-semibold not-italic leading-[normal] tracking-[-0.24px] text-black">
+                    <label
+                      className="self-stretch text-2xl font-semibold not-italic leading-[normal] tracking-[-0.24px] text-black">
                       {labTalk.speaker.name}
                     </label>
                     <p className="self-stretch text-lg font-normal not-italic leading-[27px] text-[#8A8998]">

@@ -2,7 +2,8 @@ import React from 'react';
 import calender from './assets/Calendar.svg';
 import clock from './assets/Clock.svg';
 import Image from 'next/image';
-import { LabTalk } from '../../lib/types';
+// @ts-ignore
+import { LabTalk } from '../../lib/types.ts';
 import Link from 'next/link';
 import { getTimeSpanInMinutes } from '../../lib/date';
 

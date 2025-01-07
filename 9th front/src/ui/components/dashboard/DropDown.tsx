@@ -58,19 +58,20 @@ export default function Dropdown({ transparent }) {
           <ul className="py-2">
             {historyData.map((value, index) => {
               return (
-                <li
-                  key={value.url}
-                  className="group flex transform animate-slideIn cursor-pointer items-center px-4 py-2 text-sm text-gray-700 opacity-0"
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                  }}
-                >
-                  <Logo className="mr-2 h-3 w-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:w-[18px] lg:w-[24px]" />
-                  <a href={value.url} target={'_blank'}>
+                <a href={value.url} key={value.url} target={'_blank'}>
+                  <li
+                    className="group flex transform animate-slideIn cursor-pointer items-center px-4 py-2 text-sm text-gray-700 opacity-0"
+                    style={{
+                      animationDelay: `${index * 100}ms`,
+                    }}
+                  >
+                    <Logo className="mr-2 h-3 w-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:w-[18px] lg:w-[24px]" />
+
                     {value.name}
-                  </a>
-                  <div className="absolute bottom-0 left-[15%] h-0.5 w-[70%] origin-left scale-x-0 bg-black transition-all duration-500 ease-in-out group-hover:scale-x-100"></div>
-                </li>
+
+                    <div className="absolute bottom-0 left-[15%] h-0.5 w-[70%] origin-left scale-x-0 bg-black transition-all duration-500 ease-in-out group-hover:scale-x-100"></div>
+                  </li>
+                </a>
               );
             })}
           </ul>

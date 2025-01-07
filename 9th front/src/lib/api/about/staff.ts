@@ -2,8 +2,7 @@ import { fetchJson } from '../fetch';
 import type { StaffTeam } from '../../types';
 
 export async function fetchStaffTeams() {
-  const eventId = 1;
-  const url = `${process.env.API_ORIGIN}/api/staff/${eventId}/`;
+  const url = `${process.env.API_ORIGIN}/api/staff/1/`;
   return await fetchJson<[StaffTeam]>(url);
 }
 
