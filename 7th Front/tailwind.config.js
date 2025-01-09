@@ -7,9 +7,9 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        mobile: "url('../../public/source/mobile.png')",
-        desktop: "url('../../public/source/Rectangle.png')",
-        navbar: "url('../../public/source/Navbar.png')",
+        mobile: 'url(\'../../public/source/mobile.png\')',
+        desktop: 'url(\'../../public/source/Rectangle.png\')',
+        navbar: 'url(\'../../public/source/Navbar.png\')',
       },
       fontFamily: {
         sans: 'Manrope',
@@ -51,7 +51,6 @@ module.exports = {
           800: '#638932',
           900: '#638932',
         },
-
         white: '#fff',
         darkslategray: {
           100: '#1f2b3d',

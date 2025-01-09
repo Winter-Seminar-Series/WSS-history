@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+  wss-site_app-network:
+    external: true
+
+services:
+  frontend:
+    image: wss3:frontend
+    container_name: frontend4
+    ports:
+      - 3003:3000
+    networks:
+      - wss-site_app-network
+    env_file:
+      - .env

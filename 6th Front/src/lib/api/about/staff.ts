@@ -2,7 +2,7 @@ import { fetchJson } from '../fetch';
 import type { StaffTeam } from '../../types';
 
 export async function fetchStaffTeams() {
-  const url = `${process.env.API_ORIGIN}/api/staff/${process.env.WSS_ORDER}/`;
+  const url = `${process.env.API_ORIGIN}/api/staff/4/`;
   return await fetchJson<[StaffTeam]>(url);
 }
 

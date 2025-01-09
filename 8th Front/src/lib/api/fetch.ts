@@ -9,12 +9,11 @@ export class FetchError extends Error {
   response: Response;
   status: number;
   message: string;
-
   constructor({
-                status,
-                message,
-                response,
-              }: {
+    status,
+    message,
+    response,
+  }: {
     status: number;
     message: string;
     response: Response;
@@ -48,41 +47,26 @@ export async function fetchJson<JSON = unknown>(
     fetchInit.body = JSON.stringify(decamelizeKeys(body, { deep: true }));
   }
 
-  const controller = new AbortController();
-  fetchInit.signal = controller.signal;
+  const response = await fetch(input, fetchInit);
 
-  try {
-    const response = await fetch(input, fetchInit);
-
-    if (!response.ok) {
-      let message: any;
-      try {
-        message = await response.json();
-      } catch (error) {
-        message = response.statusText;
-      }
-
-      throw new FetchError({
-        status: response.status,
-        message: message,
-        response,
-      });
+  if (!response.ok) {
+    let message: any;
+    try {
+      message = await response.json();
+    } catch (error) {
+      message = response.statusText;
     }
 
-    const data = await response.json();
-    return camelcaseKeys(data, { deep: true });
-    ;
-  } catch (error) {
-    if (error.name === 'AbortError') {
-      throw new FetchError({
-        status: 408,
-        message: 'Request timed out',
-        response: null,
-      });
-    }
-    throw error;
-  } finally {
+    throw new FetchError({
+      status: response.status,
+      message: message,
+      response,
+    });
   }
+
+  const data = await response.json();
+  const camelCaseData = camelcaseKeys(data, { deep: true });
+  return camelCaseData;
 }
 
 export async function fetchJsonWithAuth<JSON = unknown>(

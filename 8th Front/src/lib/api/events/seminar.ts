@@ -25,12 +25,12 @@ type SeminarResponse = {
 }[];
 
 export async function fetchSeminars() {
-  const url = `${process.env.API_ORIGIN}/api/seminar/${process.env.WSS_ORDER}/`;
+  const url = `${process.env.API_ORIGIN}/api/seminar/2/`;
 
   const response = await fetchJson<SeminarResponse>(url);
 
   const seminars: Seminar[] = await Promise.all(
-    response.map(async (seminarResponse) => {
+    response.reverse().map(async (seminarResponse) => {
       const description = await convertMarkdownToHTML(
         seminarResponse.subEvent.description,
       );

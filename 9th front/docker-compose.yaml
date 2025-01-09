@@ -13,4 +13,4 @@ services:
     networks:
       - wss-site_app-network
     env_file:
-      - .env.frontend
+      - .env

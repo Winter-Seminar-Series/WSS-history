@@ -35,13 +35,14 @@ export default function Footer() {
           </a>
           <a href="https://tapsell.com/" target="_blank">
             <Image
-              src="/source/sponsors/tapsell.png"
-              alt="Tapsell"
-              width="69"
-              height="40"
+              src="/source/sponsors/tapsell.svg"
+              alt="Divar"
+              height="120"
+              width="95"
               className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0"
             />
           </a>
+
         </div>
         <div className="my-8 flex items-center justify-between gap-y-4 max-md:flex-col">
           <div className="max-md:text-center">
@@ -182,7 +183,7 @@ export default function Footer() {
         </div>
         <div className="flex-row-reverse items-center justify-between">
           <p className="text-right text-sm">
-            © 2015-2024, All Rights Reserved
+            {`© 2015-${new Date().getFullYear()}, All Rights Reserved`}
           </p>
         </div>
       </div>

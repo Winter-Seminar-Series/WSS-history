@@ -37,10 +37,10 @@ const items = [
   },
   {
     id: 2,
-    title: 'Round Tables',
+    title: 'Lab Talks',
     overline: 'A deep dive into expert-led discussions',
     img: '/landing/roundtables.jpg',
-    desc: "During the event, we host round table discussions on specific topics, inviting experts in the field to share their insights and engage with participants' concerns. Please note that the round tables are conducted in Persian.",
+    desc:"Lab-Talk in the WSS program introduces the research, achievements, history, collaborations, and future plans of the computer engineering department's labs, with interactive sessions led by professors and researchers."
   },
   {
     id: 3,

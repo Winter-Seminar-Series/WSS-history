@@ -35,7 +35,15 @@ export default function Header({ isAuthenticated = false }) {
                     Sharif University of Technology - Tehran, Iran
                   </p>
                 </div>
-
+                <div className="flex max-lg:flex-[1_0_0] max-lg:flex-col max-lg:gap-1.5 lg:mt-2 lg:flex-row">
+                  <img
+                    className="inline-block h-6 w-6 lg:mr-2"
+                    src="/source/Calendar.svg"
+                  />
+                  <p className="max-lg:w-37 max-lg:h-10.5 font-normal not-italic text-[rgba(255,255,255,0.80)] max-lg:self-stretch max-lg:text-sm max-lg:leading-[21px] lg:text-xl lg:leading-[normal]">
+                    February 24th, 2022 - February 27th, 2022
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex flex-row items-start font-bold not-italic leading-[normal] text-white max-lg:mb-9 max-lg:items-start max-lg:justify-between max-lg:pt-7 lg:gap-[52px] lg:pt-[52px] lg:text-5xl lg:tracking-[-0.96px]">
@@ -82,43 +90,45 @@ export default function Header({ isAuthenticated = false }) {
               </div>
             </div>
           </div>
-          <div className="flex shrink-0 flex-col justify-between gap-y-6 text-end max-lg:flex-row max-lg:flex-wrap max-lg:text-start">
-            <div className="shrink-0 pr-2 max-lg:w-1/2">
+          <div
+            className="flex shrink-0 flex-col justify-between gap-y-6 text-end max-lg:flex-row max-lg:flex-wrap max-lg:text-start">
+            <div className="pr shrink-0 max-lg:w-1/2">
               <p className="text-6xl font-bold leading-snug tracking-tight text-white max-lg:text-[40px]">
-                2000+
+                900+
               </p>
               <p className="text-white text-opacity-80 max-lg:text-sm">
-                Participants in 9th WSS
+                Participants
               </p>
             </div>
             <div className="shrink-0 max-lg:w-1/2">
               <p className="text-6xl font-bold leading-snug tracking-tight text-white max-lg:text-[40px]">
-                160+
+                22+
               </p>
               <p className="text-white text-opacity-80 max-lg:text-sm">
-                Presentations in all series
-              </p>
-            </div>
-            <div className="shrink-0 pr-2 max-lg:w-1/2">
-              <p className="text-6xl font-bold leading-snug tracking-tight text-white max-lg:text-[40px]">
-                30+
-              </p>
-              <p className="text-white text-opacity-80 max-lg:text-sm">
-                Workshops in all series
+                Presentations
               </p>
             </div>
             <div className="shrink-0 max-lg:w-1/2">
               <p className="text-6xl font-bold leading-snug tracking-tight text-white max-lg:text-[40px]">
-                20+
+                4+
               </p>
               <p className="text-white text-opacity-80 max-lg:text-sm">
-                Subfields of Computer Science
+                Round-Tables
+              </p>
+            </div>
+            <div className="shrink-0 max-lg:w-1/2">
+              <p className="text-6xl font-bold leading-snug tracking-tight text-white max-lg:text-[40px]">
+                4+
+              </p>
+              <p className="text-white text-opacity-80 max-lg:text-sm">
+                Lab-Talks
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto -mt-36 mb-24 flex w-4/5 flex-col items-center justify-center gap-4 rounded-2xl bg-white px-[52px] py-10 text-center shadow-[0px_30px_60px_0px_rgba(189,192,199,0.10)] md:gap-8">
+      <div
+        className="mx-auto -mt-36 mb-24 flex w-4/5 flex-col items-center justify-center gap-4 rounded-2xl bg-white px-[52px] py-10 text-center shadow-[0px_30px_60px_0px_rgba(189,192,199,0.10)] md:gap-8">
         <div className="text-xl font-medium uppercase not-italic leading-normal tracking-[0.8px] text-[#1F2B3D]">
           Presentations from 15+ top level companies and masters
         </div>

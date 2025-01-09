@@ -7,10 +7,10 @@ networks:
 services:
   frontend:
     image: wss8:frontend
-    container_name: frontend6
+    container_name: frontend8
     ports:
       - 3008:3000
     networks:
       - wss-site_app-network
     env_file:
-      - .env.frontend
+      - .env
