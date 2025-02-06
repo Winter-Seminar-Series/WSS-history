@@ -63,15 +63,15 @@ export default async function AboutUs() {
         <Programs showButton={false} />
       </div>
 
-      {/*<StaffArea />*/}
-      {/*{staffTeams.map((staffTeam) => (*/}
-      {/*  <TeamSection*/}
-      {/*    key={staffTeam.id}*/}
-      {/*    teamName={staffTeam.name}*/}
-      {/*    staff={staffTeam.members.map((members) => members.staff)}*/}
-      {/*  />*/}
-      {/*))}*/}
-      <br/>
+      <StaffArea />
+      {staffTeams.map((staffTeam) => (
+        <TeamSection
+          key={staffTeam.id}
+          teamName={staffTeam.name}
+          staff={staffTeam.members.map((members) => members.staff)}
+        />
+      ))}
+      <br />
       <Timer />
       <Footer />
     </>
