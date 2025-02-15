@@ -3,12 +3,24 @@ import Sample from '../../ui/landing/staff/assets/Sample.svg';
 import type { Staff } from '../../lib/types';
 
 export default function TeamSection({
-  teamName,
-  staff,
-}: {
+                                      teamName,
+                                      staff,
+                                      sort = true,
+                                    }: {
   teamName: string;
   staff: Staff[];
+  sort: Boolean;
 }) {
+  const priorityKeywords = [
+    'President',
+    'Vice President',
+    'Leader',
+    'Head',
+    'Senior',
+    'Sub-Head',
+    'Co_Head',
+
+  ];
   return (
     <div className="pb-14">
       <div className="mb-10 flex items-center justify-center px-12">
@@ -16,12 +28,48 @@ export default function TeamSection({
         <span className="text-[40px] font-bold text-slate-800 ">
           {teamName}
         </span>
-        <hr className="ml-8 flex-grow border-neutral-200" />
+        <hr className="ml-8 flex-grow border-neutral-200 " />
       </div>
-      <div className="flex flex-wrap justify-center gap-6">
-        {staff.map((person, index) => (
-          <StaffCard2 key={index} person={person} />
-        ))}
+      <div className="flex flex-wrap justify-center gap-8">
+        {staff
+          .slice()
+          .sort((a, b) => {
+            if (!sort) {
+              return 1;
+            }
+
+            const aPriority = priorityKeywords.findIndex((keyword) =>
+              a.designation.startsWith(keyword),
+            );
+            const bPriority = priorityKeywords.findIndex((keyword) =>
+              b.designation.startsWith(keyword),
+            );
+            if (
+              a.designation === '' &&
+              b.designation !== '' &&
+              bPriority === -1
+            ) {
+              return 1;
+            }
+            if (
+              b.designation === '' &&
+              a.designation !== '' &&
+              aPriority === -1
+            ) {
+              return -1;
+            }
+            if (aPriority !== -1 && bPriority !== -1) {
+              return aPriority - bPriority;
+            } else if (aPriority !== -1) {
+              return -1;
+            } else if (bPriority !== -1) {
+              return 1;
+            }
+            return a.designation.localeCompare(b.designation);
+          })
+          .map((person, index) => (
+            <StaffCard2 key={index} person={person} />
+          ))}
       </div>
     </div>
   );
