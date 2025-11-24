@@ -1,16 +1,17 @@
 version: '3'
 
 networks:
-  wss-site_app-network:
+  app-net:
     external: true
+    name: app
 
 services:
-  frontend:
-    image: wss4:frontend
+  frontend4:
+    image: wss:front4
     container_name: frontend4
     ports:
       - 3004:3000
     networks:
-      - wss-site_app-network
+      - app-net
     env_file:
       - .env
