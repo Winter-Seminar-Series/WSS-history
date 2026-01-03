@@ -14,7 +14,7 @@ const links = [
   { href: '/about', label: 'About Us' },
 ];
 
-export default function Navbar({ fixed = true }) {
+export default function Navbar({ fixed = true, isAuthenticated = false }) {
   const [transparent, setTransparent] = useState(fixed);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
