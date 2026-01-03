@@ -6,7 +6,7 @@ networks:
     name: app
 
 services:
-  frontend9:
+  frontend10:
     image: wss:front10
     container_name: frontend10
     ports:
