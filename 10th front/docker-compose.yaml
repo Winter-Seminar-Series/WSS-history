@@ -1,0 +1,17 @@
+version: '3'
+
+networks:
+  app-net:
+    external: true
+    name: app
+
+services:
+  frontend9:
+    image: wss:front10
+    container_name: frontend10
+    ports:
+      - 3010:3000
+    networks:
+      - app-net
+    env_file:
+      - .env
